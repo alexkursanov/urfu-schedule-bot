@@ -27,6 +27,7 @@ class Config:
     # Токен бота из переменных окружения
     BOT_TOKEN = os.getenv("BOT_TOKEN")
     VK_TOKEN = os.getenv("VK_TOKEN")
+    GIGACHAT_TOKEN = os.getenv("GIGACHAT_TOKEN")
 
     if not BOT_TOKEN:
         logger.warning("❌ Ошибка: BOT_TOKEN не найден в .env файле")
@@ -39,3 +40,11 @@ class Config:
         logger.warning("Создайте файл .env с содержимым:")
         logger.warning("VK_TOKEN=ваш токен от vk api")
         exit(1)
+
+    if not GIGACHAT_TOKEN:
+        logger.warning("❌ Ошибка: GIGACHAT_TOKEN не найден в .env файле")
+        logger.warning("Создайте файл .env с содержимым:")
+        logger.warning("GIGACHAT_TOKEN=ваш токен от GigaChat")
+        exit(1)
+
+    

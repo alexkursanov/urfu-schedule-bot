@@ -19,6 +19,7 @@ httpx = "^0.28.1"
 
 # Группа зависимостей для разработки
 vk-api = "^11.10.0"
+gigachat = "^0.2.0"
 [tool.poetry.group.dev.dependencies]
 pytest = "^8.4.2"
 pytest-asyncio = "^0.26.0"
@@ -31,6 +32,7 @@ taskipy = "1.14.1"
 [tool.poetry.scripts]
 bot = "src.bot:main"
 bot_vk = "src.botvk:main"
+bot_gigachat="src.botgigachat:main"
 test_module = "src.test_module:main"
 
 [tool.taskipy.tasks]
