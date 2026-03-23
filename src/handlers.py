@@ -2,11 +2,9 @@ from telegram import Update
 from telegram.ext import ContextTypes
 
 class BotHandlers:
+    """Обработчики команд бота."""
 
-    def __init__(self):
-        pass
-
-    async def start_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+    async def start_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         """Обработчик команды /start"""
         user = update.effective_user
 
@@ -25,7 +23,7 @@ class BotHandlers:
         await update.message.reply_text(message)
 
 
-    async def help_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+    async def help_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         """Обработчик команды /help"""
         await update.message.reply_text(
             "Помощь по боту:\n\n"
@@ -35,7 +33,7 @@ class BotHandlers:
         )
 
 
-    async def about_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE):
+    async def about_command(self, update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
         """Обработчик команды /about"""
         await update.message.reply_text(
             "🤖 Бот расписания университета\n\n"

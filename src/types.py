@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Optional
+from typing import Optional, List
 
 
 @dataclass
@@ -34,11 +34,11 @@ class DaySchedule:
 
     date: str
     weekday: str
-    lessons: list[Lesson]
+    lessons: List[Lesson]
 
 
+@dataclass
 class WeekSchedule:
     """Расписание на неделю."""
 
-    def __init__(self, days: list[DaySchedule]) -> None:
-        self.days = days
+    days: List[DaySchedule]

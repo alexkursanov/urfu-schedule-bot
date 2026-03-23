@@ -24,13 +24,15 @@ logger.add(
 load_dotenv()
 
 class Config:
-    BOT_TOKEN = os.getenv("BOT_TOKEN")
+    """Конфигурация приложения."""
 
-    def __init__(self):
-        if not self.BOT_TOKEN:
+    BOT_TOKEN: str
+
+    def __init__(self) -> None:
+        bot_token = os.getenv("BOT_TOKEN")
+        if not bot_token:
             raise ValueError(
                 "BOT_TOKEN не найден. Создайте файл .env с содержимым:\n"
                 "BOT_TOKEN=ваш_токен_от_botfather"
             )
-
-    
+        self.BOT_TOKEN = bot_token
