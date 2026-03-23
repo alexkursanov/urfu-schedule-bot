@@ -145,4 +145,3 @@ class UrfuAPIClient:
             Создайте объект Lesson со всеми полями из event.
         """
         raise NotImplementedError("Реализуйте этот метод самостоятельно")
-            
